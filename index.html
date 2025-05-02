@@ -14,6 +14,7 @@
       text-align: center;
       padding: 20px;
       animation: backgroundChange 10s infinite alternate;
+      overflow-x: hidden;
     }
 
     header {
@@ -42,7 +43,6 @@
       100% { transform: scale(1); }
     }
 
-    /* Dinamik arxa fon rəngini dəyişən animasiya */
     @keyframes backgroundChange {
       0% { background: #ffe6e6; }
       25% { background: #ffcccc; }
@@ -76,6 +76,24 @@
       margin-top: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
+    /* Musiqi düyməsi üslubu */
+    #music-button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      font-size: 1em;
+      background-color: #d6336c;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #music-button:hover {
+      background-color: #b32756;
+    }
+
   </style>
 </head>
 <body>
@@ -88,23 +106,31 @@
   <div class="message">
     <p>Fəridə 🌸</p>
     <p>Bu kiçik səhifə sənin üçün hazırlandı</p>
-    <p><p style="font-size: 1.5em; color: #ff6347; font-weight: bold; margin-top: 30px;">Mayın 11-i, bir başlanğıc olacaq. Bu, sənin üçün yalnız bir imtahan deyil, həm də hədəflərinə yaxınlaşma yolunda atdığın böyük bir addımdır.</p>
+    <p style="font-size: 1.5em; color: #ff6347; font-weight: bold; margin-top: 30px;">Mayın 11-i, bir başlanğıc olacaq. Bu, sənin üçün yalnız bir imtahan deyil, həm də hədəflərinə yaxınlaşma yolunda atdığın böyük bir addımdır.</p>
     <p>Hər bir çətinlik, daha böyük uğura doğru bir addımdır. Gözlə, sən bunu bacaracaqsan! 💪</p>
     <p>Sənə hər zaman uğurlar, xoşbəxtlik və güvən diləyirəm. 💖</p>
   </div>
 
   <img src="feride.jpg" alt="Fəridəyə Özəl Şəkil" style="max-width: 65%; height: auto; margin-top: 20px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
 
-  <footer>
-    <p>&copy; 2025 | Sənin üçün hazırlandı – səssizcə, amma içdən ❤️</p>
-  </footer>
+  <!-- Musiqi düyməsi -->
+  <button id="music-button" onclick="playAudio()">Musiqi Başlat 🎶</button>
 
-  <audio autoplay loop preload="auto" controls>
+  <!-- Musiqi elementi -->
+  <audio id="myAudio" loop preload="auto">
     <source src="feride.mp3" type="audio/mpeg">
     Brauzeriniz bu musiqi formatını dəstəkləmir.
   </audio>
 
+  <footer>
+    <p>&copy; 2025 | Sənin üçün hazırlandı – səssizcə, amma içdən ❤️</p>
+  </footer>
+
   <script>
+    function playAudio() {
+      const audio = document.getElementById('myAudio');
+      audio.play();
+    }
     console.log("Fəridə üçün hazırlanmış xüsusi səhifə. ♫");
   </script>
 
